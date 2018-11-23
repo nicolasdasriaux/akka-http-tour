@@ -23,7 +23,7 @@
 
 `CustomerService` class
 
-* `findAll: Seq[Customer]`
+* `findAll(): Seq[Customer]`
 * `find(id: Int): Customer`
 * `insert(post: CustomerPost): Customer`
 * `update(customer: Customer): Customer`
