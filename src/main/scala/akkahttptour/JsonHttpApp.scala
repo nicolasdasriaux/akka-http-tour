@@ -1,4 +1,4 @@
-package com.axa.tutorial
+package akkahttptour
 
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http

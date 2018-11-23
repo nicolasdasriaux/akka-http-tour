@@ -12,5 +12,7 @@ lazy val root = (project in file("."))
       "com.typesafe.akka" %% "akka-http-spray-json" % "10.1.5",
       "com.typesafe.akka" %% "akka-stream" % "2.5.17",
       "com.typesafe.akka" %% "akka-actor" % "2.5.17"
-    )
+    ),
+
+    mainClass in reStart := Some("akkahttptour.AkkaHttpTourApp")
   )

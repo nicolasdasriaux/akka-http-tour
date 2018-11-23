@@ -1,9 +1,9 @@
-package com.axa.tutorial
+package akkahttptour
 
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
-import akka.stream.{ActorMaterializer, Materializer}
 import akka.http.scaladsl.server.Directives._
+import akka.stream.{ActorMaterializer, Materializer}
 
 import scala.concurrent.ExecutionContext
 
