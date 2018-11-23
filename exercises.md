@@ -87,7 +87,7 @@
 
 **Request**
 
-POST /customers/4
+`POST /customers/4`
 
 ```
 { "firstName": "Paul", "lastName": "Simon" }
