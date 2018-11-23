@@ -15,9 +15,9 @@ object JsonHttpApp {
   case class Item(id: Int, name: String)
 
   object EcommerceProtocol extends SprayJsonSupport with DefaultJsonProtocol {
-    implicit lazy val cartFormat: RootJsonFormat[Cart] = jsonFormat1(Cart)
-    implicit lazy val orderFormat: RootJsonFormat[OrderLine] = jsonFormat2(OrderLine)
-    implicit lazy val itemFormat: RootJsonFormat[Item] = jsonFormat2(Item)
+    implicit lazy val cartFormat: RootJsonFormat[Cart] = jsonFormat1(Cart.apply)
+    implicit lazy val orderFormat: RootJsonFormat[OrderLine] = jsonFormat2(OrderLine.apply)
+    implicit lazy val itemFormat: RootJsonFormat[Item] = jsonFormat2(Item.apply)
   }
 
   import EcommerceProtocol._

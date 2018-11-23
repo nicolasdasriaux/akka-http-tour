@@ -329,9 +329,9 @@ case class Item(id: Int, name: String)
 
 ```scala
 object EcommerceProtocol extends SprayJsonSupport with DefaultJsonProtocol {
-  implicit lazy val cartFormat: RootJsonFormat[Cart] = jsonFormat1(Cart)
-  implicit lazy val orderFormat: RootJsonFormat[OrderLine] = jsonFormat2(OrderLine)
-  implicit lazy val itemFormat: RootJsonFormat[Item] = jsonFormat2(Item)
+  implicit lazy val cartFormat: RootJsonFormat[Cart] = jsonFormat1(Cart.apply)
+  implicit lazy val orderFormat: RootJsonFormat[OrderLine] = jsonFormat2(OrderLine.apply)
+  implicit lazy val itemFormat: RootJsonFormat[Item] = jsonFormat2(Item.apply)
 }
 ```
 
@@ -372,6 +372,8 @@ val cart = Cart(
   )
 )
 
+import EcommerceProtocol._
+
 val getCart = (get & path("cart")) {
   complete(cart)
 }
@@ -383,10 +385,12 @@ val getCart = (get & path("cart")) {
 
 ```scala
 val items = Seq(
-  OrderLine(item = Item(id = 1, name = "Ball"), quantity = 2),
-  OrderLine(item = Item(id = 2, name = "Pen"), quantity = 1),
-  OrderLine(item = Item(id = 3, name = "Fork"), quantity = 3)
+  Item(id = 1, name = "Ball"),
+  Item(id = 2, name = "Pen"),
+  Item(id = 3, name = "Fork")
 )
+
+import EcommerceProtocol._
 
 val getItems = (get & path("items")) {
   complete(items)
