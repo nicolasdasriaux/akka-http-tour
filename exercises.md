@@ -31,7 +31,7 @@
 ## Customer Update
 
 `CustomerUpdate` class
-
+``
 | Attribute   | Type     |
 |-------------|----------|
 | `firstName` | `String` |
