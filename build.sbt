@@ -2,7 +2,7 @@ import sbt.Keys.version
 
 lazy val root = (project in file("."))
   .settings(
-    organization := "com.axa.tutorial",
+    organization := "akkahttptour",
     name := "akka-http-tour",
     version := "0.1",
     scalaVersion := "2.12.7",
